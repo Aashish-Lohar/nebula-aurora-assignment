@@ -152,3 +152,10 @@ kube-prometheus-stack:
     adminUser: admin
     adminPassword: admin
     enabled: true
+    grafana.ini:
+      server:
+        root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
+        # root_url: https://mysb.grafanasite.com/grafana/
+        serve_from_sub_path: true
+      users:
+        default_home_dashboard_path: /d/creation-dashboard-678/creation

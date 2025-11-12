@@ -1,13 +1,13 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "wiki-chart.fullname" . }}
+  name: {{ .Release.Name }}-servicemonitor
   labels:
     release: {{ .Release.Name }}
 spec:
   selector:
     matchLabels:
-      app: {{ include "wiki-chart.fullname" . }}-svc
+      app: {{ .Release.Name }}-svc
   endpoints:
     - port: http
       path: /metrics
