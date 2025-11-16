@@ -24,20 +24,6 @@ spec:
                 port:
                   number: 80
                   
-          - path: /user/
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Release.Name }}-fastapi-service 
-                port:
-                  number: 8000
-          - path: /posts/
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Release.Name }}-fastapi-service 
-                port:
-                  number: 8000
           - path: /
             pathType: Prefix
             backend:
